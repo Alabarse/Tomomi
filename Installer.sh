@@ -1644,53 +1644,12 @@ case $CHOICE in
 echo -e "\e[40;38;5;82m Installing dependencies \e[30;48;5;82m\e[0m"
 sudo pacman -S bc dkms git linux-headers
 echo -e "\e[40;38;5;82m Downloading driver \e[30;48;5;82m\e[0m"
-git clone https://github.com/tomaspinho/rtl8821ce
-cd rtl8821ce
-echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
-make
-echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-sudo make install
-sudo modprobe 8821ce
+git clone https://aur.archlinux.org/rtl8821ce-dkms-git.git
+cd rtl8821ce-dkms-git
+echo -e "\e[40;38;5;82m Building driver & installing driver \e[30;48;5;82m\e[0m"
+makepkg -i
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-#!/bin/bash
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=2
-BACKTITLE="RTL-Driver-Installer 1.3"
-TITLE="Reinstall after kernel update"
-MENU="Should this installer leave files for a reinstallation after a kernel update?:"
 
-OPTIONS=(1 "Yes"
-         2 "No")
-
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-
-clear
-case $CHOICE in
-        1)
-			#!/bin/bash
-cd -
-echo -e "\e[40;38;5;82m Removeing old files \e[30;48;5;82m\e[0m"
-rm -rf rtl8821ce
-echo -e "\e[40;38;5;82m Downloading driver \e[30;48;5;82m\e[0m"
-git clone https://github.com/tomaspinho/rtl8821ce
-echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m \e[0m"
-
-            ;;
-        2)
-			#!/bin/bash
-cd -
-echo -e "\e[40;38;5;82m Removeing old files \e[30;48;5;82m\e[0m"
-rm -rf rtl8821ce
-echo -e "\e[40;38;5;82m Alright :) \e[30;48;5;82m\e[0m"
-
-esac
             ;;
         2)
 			#!/bin/bash
