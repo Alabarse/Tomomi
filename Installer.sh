@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 echo -e "\e[40;38;5;82m Installing dependencies to run this script \e[30;48;5;82m\e[0m"
 sudo eopkg it dialog wget
 sudo apt install dialog
@@ -103,7 +103,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -158,7 +158,7 @@ cho -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -217,7 +217,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -301,7 +301,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -357,7 +357,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -413,7 +413,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -469,7 +469,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -525,7 +525,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -580,7 +580,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -637,7 +637,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -697,7 +697,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -758,7 +758,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -921,7 +921,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe rtl8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -976,7 +976,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1035,7 +1035,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1119,7 +1119,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1175,7 +1175,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1231,7 +1231,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1287,7 +1287,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1343,7 +1343,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1398,7 +1398,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1455,7 +1455,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1515,7 +1515,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1574,7 +1574,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"á
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1694,7 +1694,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1749,7 +1749,7 @@ cho -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1808,7 +1808,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1892,7 +1892,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1948,7 +1948,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2004,7 +2004,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2060,7 +2060,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2116,7 +2116,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2171,7 +2171,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2228,7 +2228,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2288,7 +2288,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2347,7 +2347,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2428,7 +2428,7 @@ make
 echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2506,7 +2506,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2561,7 +2561,7 @@ cho -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2620,7 +2620,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2704,7 +2704,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2760,7 +2760,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2816,7 +2816,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2872,7 +2872,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2928,7 +2928,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2983,7 +2983,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -3040,7 +3040,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -3100,7 +3100,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -3159,7 +3159,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"
-read -p "Press enter to continue"
+read -r -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
