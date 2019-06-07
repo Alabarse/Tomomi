@@ -1,7 +1,8 @@
 #/bin/bash
 echo -e "\e[40;38;5;82m Installing dependencies to run this script \e[30;48;5;82m\e[0m"
-sudo eopkg it dialog
+sudo eopkg it dialog wget
 sudo apt install dialog
+sudo pacman -S wget
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -13,7 +14,9 @@ MENU="What driver do you want to install?:"
 OPTIONS=(1 "RTL8812au"
          2 "RTL8188eu, RTL8188eus & RTL8188etv"
          3 "RTL8821ce"
-         4 "RTL8723de")
+         4 "RTL8723de"
+         5 "Release notes"
+	 6 "Update")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -755,6 +758,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"
+read -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -1570,6 +1574,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"á
+read -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -2342,6 +2347,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"
+read -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -3153,6 +3159,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter again! \e[0m"
+read -p "Press enter to continue"
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
@@ -3194,7 +3201,64 @@ echo -e "\e[40;38;5;82m Alright :) \e[30;48;5;82m\e[0m"
 esac
 esac
 
+           ;;
+        5)
+			#!/bin/bash
+sed -n 3204,3252p /home/alexander/Desktop/Test.sh
+#  1.0
+# 
+#    Merged all scripts in one
+#    Added more information about what happened during installation
+    
+# 1.1
+# Added:
+
+#    Support for Manjaro & Antergos
+#    Support for the Solus lts kernel
+#    Reinstalling & uninstalling
+#    Offline installation : Install your driver again if you lose your connection after a kernel update.
+#    Installation of dependencies to run this script. #1 #2
+
+    
+# 1.2
+# Added:
+
+#    Support for OpenSUSE
+#    Support for Sabayon Kernel 5.0.5
+#    The reinstalling question for Sabayon Kernel 4.19
+
+# Removed:
+
+#    An an unnecessary reinstalling question for arch because dkms.
+
+# Fixed:
+
+#    The reinstalling function
+
+# 1.2.1
+
+#Update: Sabayon Kernel 5
 
 
+# 1.3
+
+#Added: Support for RTL8821CE, RTL8188eu , RTL8188eus and RTL8188etv
+
+
+# 1.4
+
+# Added: 
+ 
+# - Support for RTL8723de Special thanks to @cata0309 for testing #19
+# - Release notes section
+# - Updater
+
+# Changes: RTL8821ce Arch Installation: Uses now dkms.
+
+           ;;
+        6)
+			#!/bin/bash
+rm Installer.sh
+wget https://raw.githubusercontent.com/linuxerus/rtl-driver-installer/master/Installer.sh
+bash Installer.sh
 esac
-
