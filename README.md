@@ -1,4 +1,4 @@
-# RTL-Driver-Installer <img alt="GitHub release" src="https://img.shields.io/github/release/Alexander88207/RTL8812au-Installer.svg">
+# rtl-driver-installer [![CodeFactor](https://www.codefactor.io/repository/github/linuxerus/rtl-driver-installer/badge)](https://www.codefactor.io/repository/github/linuxerus/rtl-driver-installer) <img alt="GitHub release" src="https://img.shields.io/github/release/Alexander88207/RTL8812au-Installer.svg">
 
 Should you have a problem during installation or general with the driver then let me know :)
 
@@ -21,7 +21,7 @@ Should you have a problem during installation or general with the driver then le
 - RTL8812au by [gordboy](https://github.com/gordboy/rtl8812au)
 - RTL8188eu, RTL8188eus & RTL8188etv by [quckreflex](https://github.com/quickreflex/rtl8188eus)
 - RTL8821ce by [tomaspinho](https://github.com/tomaspinho/rtl8821ce)
-- RTL8723be (soon)
+- RTL8723de by [smlinux](https://github.com/smlinux/rtl8723de)
 
 Note: If your desired driver is not there or does not work please open an issue.
 
@@ -54,4 +54,4 @@ If you encounter this error, try another USB port first. If this is not enough, 
 This happens when the linux kernel was updated. The only solution is to reinstall the driver again. This is not needed for the Arch installation of the RTL8812au driver!
 
 ## Contribute :pencil2:
-if you want to contribute to this repo then just send a pull request :)
+if you want to contribute to this repo then just send a pull request in the [testing](https://github.com/linuxerus/RTL-Driver-Installer/tree/testing) branch :)
