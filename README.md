@@ -1,4 +1,4 @@
-# rtl-driver-installer [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/rtl-driver-installer/badge/master)](https://www.codefactor.io/repository/github/alexander88207/rtl-driver-installer/overview/master) <img alt="GitHub release" src="https://img.shields.io/github/release/Alexander88207/RTL8812au-Installer.svg">
+# rtl-driver-installer [![CodeFactor](https://www.codefactor.io/repository/github/linuxerus/rtl-driver-installer/badge)](https://www.codefactor.io/repository/github/linuxerus/rtl-driver-installer) <img alt="GitHub release" src="https://img.shields.io/github/release/Alexander88207/RTL8812au-Installer.svg">
 
 Should you have a problem during installation or general with the driver then let me know :)
 
@@ -21,7 +21,7 @@ Should you have a problem during installation or general with the driver then le
 - RTL8812au by [gordboy](https://github.com/gordboy/rtl8812au)
 - RTL8188eu, RTL8188eus & RTL8188etv by [quckreflex](https://github.com/quickreflex/rtl8188eus)
 - RTL8821ce by [tomaspinho](https://github.com/tomaspinho/rtl8821ce)
-- RTL8723be (soon)
+- RTL8723de by [smlinux](https://github.com/smlinux/rtl8723de)
 
 Note: If your desired driver is not there or does not work please open an issue.
 
