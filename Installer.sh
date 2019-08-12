@@ -3259,6 +3259,6 @@ sed -n 3204,3252p /home/alexander/Desktop/Test.sh
         6)
 			#!/bin/bash
 rm Installer.sh
-wget https://raw.githubusercontent.com/linuxerus/rtl-driver-installer/master/Installer.sh
+wget https://raw.githubusercontent.com/Alexander88207/RTL-Driver-Installer/master/Installer.sh
 bash Installer.sh
 esac
