@@ -1,3 +1,4 @@
+#!/bin/bash
 cd /home/$USER
 mkdir RTL-Driver-Installer-Files
 cd RTL-Driver-Installer-Files
