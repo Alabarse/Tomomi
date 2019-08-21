@@ -34,7 +34,7 @@ Before you start installing the WiFi driver, make sure you have all the updates 
 
 # Installation/Uninstallation :cd:
 
-Download the latest stable release from [here](https://github.com/Alexander88207/RTL8812au-Installer/releases) or if you are brave use my [testing](https://github.com/Alexander88207/RTL8812au-Installer/tree/testing) branch ;)
+Download the latest stable release from [here](https://github.com/Alexander88207/RTL8812au-Installer/releases)
 
 To start this installer use the follwing command in the folder:
 ```
