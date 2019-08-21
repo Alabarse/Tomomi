@@ -164,15 +164,15 @@ git clone https://github.com/smlinux/rtl8723de.git
             ;;
         5)
 echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
-git clone https://github.com/ulli-kroll/rtl8188fu
+git clone https://github.com/kelebek333/rtl8188fu
 cd rtl8188fu
 echo -e "\e[40;38;5;82mBuilding driver\e[30;48;5;82m\e[0m"
 make
 echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
-sudo modprobe cfg80211
+sudo modprobe rtl8188fu
 echo -e "\e[40;38;5;82mCleanup & make the driver ready for an reinstallation\e[30;48;5;82m\e[0m"
 cd /home/$USER/RTL-Driver-Installer-Files
 rm -d -r rtl8188fu
-git clone https://github.com/ulli-kroll/rtl8188fu
+git clone https://github.com/kelebek333/rtl8188fu
 esac
