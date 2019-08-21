@@ -7,7 +7,7 @@ Should you have a problem during installation or general with the driver then le
 - The driver will be installed automatically with all required dependencies.
 - Offline installation : Install your driver again if you lose your connection after a kernel update.
 
-# Dependencies syringe
+# Dependencies :syringe:
 
 - dialog
 
