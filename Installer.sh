@@ -72,7 +72,7 @@ esac
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
-CHOICE_HEIGHT=4
+CHOICE_HEIGHT=5
 BACKTITLE="RTL-Driver-Installer 1.5"
 TITLE="Driver"
 MENU="What driver do you want to install?"
