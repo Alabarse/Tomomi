@@ -1,12 +1,12 @@
 #!/bin/bash
 cd /home/$USER
-mkdir RTL-Driver-Installer-Files
-cd RTL-Driver-Installer-Files
+mkdir Tomomi-Files
+cd Tomomi-Files
 #!/bin/bash
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=7
-BACKTITLE="RTL-Driver-Installer 1.5"
+BACKTITLE="Tomomi 1.5"
 TITLE="Welcome $USER :)"
 MENU="Choose one of the following distros or options"
 
@@ -39,7 +39,7 @@ sudo eopkg it gcc binutils git make
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=2
-BACKTITLE="RTL-Driver-Installer 1.5"
+BACKTITLE="Tomomi 1.5"
 TITLE="Question about Solus Kernel"
 MENU="What kernel do you use?"
 
@@ -85,7 +85,7 @@ esac
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=5
-BACKTITLE="RTL-Driver-Installer 1.5"
+BACKTITLE="Tomomi 1.5"
 TITLE="Driver"
 MENU="What driver do you want to install?"
 
@@ -115,7 +115,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8812au
 echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
-cd /home/$USER/RTL-Driver-Installer-Files
+cd /home/$USER/Tomomi-Files
 rm -d -r rtl8812au
 git clone https://github.com/gordboy/rtl8812au
             ;;
@@ -130,7 +130,7 @@ sudo make install
 sudo modprobe 8188eu
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
 echo -e "\e[40;38;5;82mCleanup & make the driver ready for an reinstallation\e[30;48;5;82m\e[0m"
-cd /home/$USER/RTL-Driver-Installer-Files
+cd /home/$USER/Tomomi-Files
 rm -d -r rtl88eus
 git clone https://github.com/quickreflex/rtl8188eus
             ;;
@@ -144,7 +144,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8821ce
 echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
-cd /home/$USER/RTL-Driver-Installer-Files
+cd /home/$USER/Tomomi-Files
 rm -d- -r rtl8821ce
 git clone https://github.com/tomaspinho/rtl8821ce
             ;;
@@ -158,7 +158,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe 8723de
 echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
-cd /home/$USER/RTL-Driver-Installer-Files
+cd /home/$USER/Tomomi-Files
 rm -d- -r rtl8723de
 git clone https://github.com/smlinux/rtl8723de.git
             ;;
@@ -172,7 +172,7 @@ echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 sudo make install
 sudo modprobe rtl8188fu
 echo -e "\e[40;38;5;82mCleanup & make the driver ready for an reinstallation\e[30;48;5;82m\e[0m"
-cd /home/$USER/RTL-Driver-Installer-Files
+cd /home/$USER/Tomomi-Files
 rm -d -r rtl8188fu
 git clone https://github.com/kelebek333/rtl8188fu
 esac
