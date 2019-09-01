@@ -1,8 +1,4 @@
 #!/bin/bash
-cd /home/$USER
-mkdir Tomomi-Files
-cd Tomomi-Files
-#!/bin/bash
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=7
@@ -104,7 +100,11 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
 
 clear
+cd /home/$USER
+mkdir Tomomi-Files
+cd Tomomi-Files
 case $CHOICE in
+
         1)
 echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
 git clone https://github.com/gordboy/rtl8812au
