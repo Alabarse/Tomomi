@@ -1,4 +1,5 @@
-# Tomomi [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Tomomi/badge)](https://www.codefactor.io/repository/github/alexander88207/Tomomi) <img alt="GitHub release" src="https://img.shields.io/github/release/Alexander88207/Tomomi.svg">
+# Tomomi
+[![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Tomomi/badge)](https://www.codefactor.io/repository/github/alexander88207/Tomomi) <img alt="GitHub release" src="https://img.shields.io/github/release/Alexander88207/Tomomi.svg">
 
 Should you have a problem during installation or general with the driver then let me know :)
 
