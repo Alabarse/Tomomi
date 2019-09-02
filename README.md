@@ -39,7 +39,7 @@ Download the latest stable release from [here](https://github.com/Alexander88207
 
 To start this installer use the follwing command in the folder:
 ```
-bash Installer.sh
+bash Tomomi.sh
 ```
 
 To uninstall this driver select "uninstall"
