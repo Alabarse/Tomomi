@@ -1,156 +1,71 @@
 #!/bin/bash
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=7
-BACKTITLE="Tomomi 1.5"
-TITLE="Welcome $USER :)"
-MENU="Choose one of the following distros or options"
+NAME=Tomomi
+VER=1.5
+SD=$(pwd)
+echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
+echo -e "\e[93mWelcome to $NAME $VER have fun!"
 
-OPTIONS=(1 "Arch/Manjaro/Antergos"
-         2 "Solus"
-         3 "Ubuntu"
-         4 "Sabayon"
-         5 "OpenSUSE"
-         6 "Uninstallation"
-	 7 "Reinstallation")
+Selection=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Please work through this list one by one" --hide-header --column "$NAME" --column "Item" FALSE "Select distro" FALSE "Select driver" FALSE "" FALSE "About" FALSE "Exit")
 
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
+if [[ $Selection == *"Select distro"* ]]; then
 
-clear
-case $CHOICE in
+Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE" FALSE "Exit")
 
-        1)
-echo -e "\e[40;38;5;82m Installing dependencies \e[30;48;5;82m\e[0m"
-sudo pacman -S bc git linux-headers
-            ;;
-        2) 
-echo -e "\e[40;38;5;82mInstalling dependencies for solus\e[30;48;5;82m\e[0m"
-sudo eopkg it gcc binutils git make
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=2
-BACKTITLE="Tomomi 1.5"
-TITLE="Question about Solus Kernel"
-MENU="What kernel do you use?"
+PASSWORD=$(zenity --password --title "The Script will now install the requiered dependencies.Enter your password to proceed")
 
-OPTIONS=(1 "Current"
-         2 "LTS")
+if [[ $Distro == *"Arch"* ]]; then
+echo VIP
+fi
 
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
 
-clear
-case $CHOICE in
-        1)
-sudo eopkg it linux-current-headers
-;;
-        2)
-sudo eopkg it linux-lts-headers
-esac
-            ;;
-        3)
-echo -e "\e[40;38;5;82m Installing dependencies \e[30;48;5;82m\e[0m"
-sudo apt install -y git build-essential make autoconf libtool gcc gettext
-            ;;
-        4)
-echo -e "\e[40;38;5;82m Installing dependencies\e[30;48;5;82m\e[0m" 
-sudo equo install gcc --ask
-            ;;
-        5)
-echo -e "\e[40;38;5;82mInstalling dependencies\e[30;48;5;82m\e[0m"  
-sudo zypper install make kernel-source
-            ;;
-        6) echo uninstallation is coming soon again
-bash
-            ;;
-        7) echo reinstallation is coming soon again
-bash
-esac
-#!/bin/bash
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=5
-BACKTITLE="Tomomi 1.5"
-TITLE="Driver"
-MENU="What driver do you want to install?"
+if [[ $Distro == *"Solus"* ]]; then
+echo $PASSWORD | sudo -S "eopkg it gcc binutils git make"
+SKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "Current" FALSE "LTS")
 
-OPTIONS=(1 "RTL8812au"
-         2 "RTL8188eu, RTL8188eus & RTL8188etv"
-         3 "RTL8821ce"
-         4 "RTL8723de"
-         5 "RTL8188fu")
+if [[ $SKH == *"Current"* ]]; then
+echo $PASSWORD | sudo -S "eopkg it linux-current-headers"
+fi
 
-CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
+if [[ $SKH == *"LTS"* ]]; then
+echo $PASSWORD | sudo -S "eopkg it linux-lts-headers"
+fi
+fi
 
-clear
+if [[ $Distro == *"Ubuntu"* ]]; then
+echo $PASSWORD | sudo -S "command"
+fi
+
+if [[ $Distro == *"Sabayon"* ]]; then
+echo $PASSWORD | sudo -S "command"
+fi
+
+if [[ $Distro == *"OpenSUSE"* ]]; then
+echo $PASSWORD | sudo -S "command"
+fi
+fi
+
+if [[ $Selection == *"Select driver"* ]]; then
 cd /home/$USER
-mkdir Tomomi
-cd Tomomi
-case $CHOICE in
+mkdir /home/$USER/$NAME
+cd /home/$USER/$NAME
+DRV=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What driver?" --hide-header --column "$NAME" --column "Item" FALSE "RTL8812au" FALSE "RTL8188/eu/s/etv" FALSE "RTL8821ce" FALSE "RTL8723de" FALSE "RTL8188fu")
 
-        1)
+if [[ $DRV == *"RTL8812au"* ]]; then
+echo WIP
+fi
+
+if [[ $DRV == *"RTL8188/eu/s/etv"* ]]; then
+echo WIP
+fi
+
+if [[ $DRV == *"RTL8821ce"* ]]; then
+echo WIP
+fi
+
+if [[ $DRV == *"RTL8723de"* ]]; then
+GB=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "4.10-down" FALSE "4.11-up" FALSE "4.15-up" FALSE "5.0-up")
 echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
-git clone https://github.com/gordboy/rtl8812au
-cd rtl8812au
-echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
-make
-echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-sudo make install
-sudo modprobe 8812au
-echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
-cd /home/$USER/Tomomi
-rm -d -r rtl8812au
-git clone https://github.com/gordboy/rtl8812au
-            ;;
-        2)
-echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
-git clone https://github.com/quickreflex/rtl8188eus
-cd rtl88eus
-echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
-make all
-echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-sudo make install
-sudo modprobe 8188eu
-echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
-echo -e "\e[40;38;5;82mCleanup & make the driver ready for an reinstallation\e[30;48;5;82m\e[0m"
-cd /home/$USER/Tomomi
-rm -d -r rtl88eus
-git clone https://github.com/quickreflex/rtl8188eus
-            ;;
-        3)
-echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
-git clone https://github.com/tomaspinho/rtl8821ce
-cd rtl8821ce
-echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
-make
-echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-sudo make install
-sudo modprobe 8821ce
-echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
-cd /home/$USER/Tomomi
-rm -d- -r rtl8821ce
-git clone https://github.com/tomaspinho/rtl8821ce
-            ;;
-        4)
-echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
-git clone git clone https://github.com/smlinux/rtl8723de.git
+git clone --single-branch --branch $GB https://github.com/smlinux/rtl8723de.git
 cd rtl8723de
 echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
 make
@@ -160,19 +75,11 @@ sudo modprobe 8723de
 echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
 cd /home/$USER/Tomomi
 rm -d- -r rtl8723de
-git clone https://github.com/smlinux/rtl8723de.git
-            ;;
-        5)
-echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
-git clone https://github.com/kelebek333/rtl8188fu
-cd rtl8188fu
-echo -e "\e[40;38;5;82mBuilding driver\e[30;48;5;82m\e[0m"
-make
-echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-sudo make install
-sudo modprobe rtl8188fu
-echo -e "\e[40;38;5;82mCleanup & make the driver ready for an reinstallation\e[30;48;5;82m\e[0m"
-cd /home/$USER/Tomomi
-rm -d -r rtl8188fu
-git clone https://github.com/kelebek333/rtl8188fu
-esac
+fi
+
+if [[ $DRV == *"RTL8188fu"* ]]; then
+echo WIP
+fi
+fi
+cd $SD
+bash Tomomi.sh
