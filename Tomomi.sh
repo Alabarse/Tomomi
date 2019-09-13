@@ -9,20 +9,20 @@ Selection=$(zenity --list --radiolist --height=100 --width 300 --title="$NAME $V
 
 if [[ $Selection == *"Install dependencies"* ]]; then
 
-Distro=$(zenity --list --radiolist --height=100 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE")
+Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE")
 
 PASSWORD=$(zenity --password --title "The Script will now install the driver $DRV, enter your password to proceed")
 
 if [[ $Distro == *"Arch"* ]]; then
 echo $PASSWORD | sudo -S pacman -S bc dkms git
-AKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-headers" FALSE "linux-lts-headers" FALSE "linux-zen-headers")
+AKH=$(zenity --list --radiolist --height=300 --width 200 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-headers" FALSE "linux-lts-headers" FALSE "linux-zen-headers")
 echo $PASSWORD | sudo -S pacman -S $AKH
 fi
 
 
 if [[ $Distro == *"Solus"* ]]; then
 echo $PASSWORD | sudo -S eopkg it gcc binutils git make
-SKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-current-headers" FALSE "linux-lts-headers")
+SKH=$(zenity --list --radiolist --height=300 --width 100 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-current-headers" FALSE "linux-lts-headers")
 echo $PASSWORD | sudo -S eopkg it $SKH
 fi
 
@@ -32,7 +32,7 @@ fi
 
 if [[ $Distro == *"Sabayon"* ]]; then
 echo $PASSWORD | sudo -S equo install gcc --ask
-SS=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "For what kernel version do you want to install the sabayon-sources?" --hide-header --column "$NAME" --column "Item" FALSE "4.4.167" FALSE "4.14.132" FALSE "5.0.21" FALSE "5.1.21" FALSE "5.28")
+SS=$(zenity --list --radiolist --height=300 --width 200 --title="$NAME $VER" --text "For what kernel version do you want to install the sabayon-sources?" --hide-header --column "$NAME" --column "Item" FALSE "4.4.167" FALSE "4.14.132" FALSE "5.0.21" FALSE "5.1.21" FALSE "5.28")
 echo $PASSWORD | sudo -S equo i sabayon-sources-$SS
 fi
 
@@ -45,7 +45,7 @@ if [[ $Selection == *"Install driver"* ]]; then
 cd /home/$USER
 mkdir /home/$USER/$NAME
 cd /home/$USER/$NAME
-DRV=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What driver?" --hide-header --column "$NAME" --column "Item" FALSE "RTL8812au" FALSE "RTL8188/eu/s/etv" FALSE "RTL8821ce" FALSE "RTL8723de" FALSE "RTL8188fu")
+DRV=$(zenity --list --radiolist --height=300 --width 200 --title="$NAME $VER" --text "What driver?" --hide-header --column "$NAME" --column "Item" FALSE "RTL8812au" FALSE "RTL8188/eu/s/etv" FALSE "RTL8821ce" FALSE "RTL8723de" FALSE "RTL8188fu")
 
 PASSWORD=$(zenity --password --title "The Script will now install the driver $DRV, enter your password to proceed")
 
@@ -63,7 +63,7 @@ rm -d -r rtl8812au
 fi
 
 if [[ $DRV == *"RTL8188/eu/s/etv"* ]]; then
-GB=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "v3.5.9" FALSE "v5.2.2.4" FALSE "v5.3.9")
+GB=$(zenity --list --radiolist --height=300 --width 200 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "v3.5.9" FALSE "v5.2.2.4" FALSE "v5.3.9")
 git clone --single-branch --branch $GB https://github.com/quickreflex/rtl8188eus.git
 cd rtl8188eus
 echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
@@ -77,7 +77,7 @@ rm -d -r rtl8723de
 fi
 
 if [[ $DRV == *"RTL8821ce"* ]]; then
-GB=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "fix-compilation-5.1" FALSE "integrate-v5.2.5_1" FALSE "v5.5.2" FALSE "master")
+GB=$(zenity --list --radiolist --height=100 --width 200 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "fix-compilation-5.1" FALSE "integrate-v5.2.5_1" FALSE "v5.5.2" FALSE "master")
 echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
 git clone --single-branch --branch $GB https://github.com/tomaspinho/rtl8821ce.git
 cd rtl8821ce
