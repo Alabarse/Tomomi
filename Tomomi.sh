@@ -5,13 +5,13 @@ SD=$(pwd)
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 
-Selection=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Please work through this list one by one" --hide-header --column "$NAME" --column "Item" FALSE "Select distro" FALSE "Select driver" FALSE "" FALSE "About" FALSE "Exit")
+Selection=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Welome to Tomomi $VER" --hide-header --column "$NAME" --column "Item" FALSE "Install dependencies" FALSE "Install driver")
 
-if [[ $Selection == *"Select distro"* ]]; then
+if [[ $Selection == *"Install dependencies"* ]]; then
 
-Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE" FALSE "Exit")
+Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE")
 
-PASSWORD=$(zenity --password --title "The Script will now install the requiered dependencies.Enter your password to proceed")
+PASSWORD=$(zenity --password --title "The Script will now install the driver $DRV, enter your password to proceed")
 
 if [[ $Distro == *"Arch"* ]]; then
 echo $PASSWORD | sudo -S pacman -S bc dkms git
@@ -41,11 +41,13 @@ echo $PASSWORD | sudo -S zypper install make kernel-source
 fi
 fi
 
-if [[ $Selection == *"Select driver"* ]]; then
+if [[ $Selection == *"Install driver"* ]]; then
 cd /home/$USER
 mkdir /home/$USER/$NAME
 cd /home/$USER/$NAME
 DRV=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What driver?" --hide-header --column "$NAME" --column "Item" FALSE "RTL8812au" FALSE "RTL8188/eu/s/etv" FALSE "RTL8821ce" FALSE "RTL8723de" FALSE "RTL8188fu")
+
+PASSWORD=$(zenity --password --title "The Script will now install the driver $DRV, enter your password to proceed")
 
 if [[ $DRV == *"RTL8812au"* ]]; then
 git clone https://github.com/gordboy/rtl8812au.git
@@ -117,6 +119,11 @@ echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\
 cd /home/$USER/Tomomi
 rm -d -r rtl8188fu
 fi
+fi
+
+if [[ $? == *"0"* ]]; then
+notify-send "Thanks for using $NAME and have a great day!"
+exit
 fi
 cd $SD
 bash Tomomi.sh
