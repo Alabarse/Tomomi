@@ -7,7 +7,6 @@ Should you have a problem during installation or general with the driver then le
 # Features &#x1F4D8;
 
 - The driver will be installed automatically with all required dependencies.
-- Offline installation : Install your driver again if you lose your connection after a kernel update.
 
 # Dependencies :syringe:
 
