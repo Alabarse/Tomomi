@@ -14,28 +14,30 @@ Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER"
 PASSWORD=$(zenity --password --title "The Script will now install the requiered dependencies.Enter your password to proceed")
 
 if [[ $Distro == *"Arch"* ]]; then
-echo $PASSWORD | sudo -S "pacman -S bc dkms git"
+echo $PASSWORD | sudo -S pacman -S bc dkms git
 AKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-headers" FALSE "linux-lts-headers" FALSE "linux-zen-headers")
-echo $PASSWORD | sudo -S "pacman -S $AKH"
+echo $PASSWORD | sudo -S pacman -S $AKH
 fi
 
 
 if [[ $Distro == *"Solus"* ]]; then
-echo $PASSWORD | sudo -S "eopkg it gcc binutils git make"
+echo $PASSWORD | sudo -S eopkg it gcc binutils git make
 SKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-current-headers" FALSE "linux-lts-headers")
-echo $PASSWORD | sudo -S "eopkg it $SKH"
+echo $PASSWORD | sudo -S eopkg it $SKH
 fi
 
 if [[ $Distro == *"Ubuntu"* ]]; then
-echo $PASSWORD | sudo -S "apt install -y git build-essential make autoconf libtool gcc gettext"
+echo $PASSWORD | sudo -S apt install -y git build-essential make autoconf libtool gcc gettext
 fi
 
 if [[ $Distro == *"Sabayon"* ]]; then
-echo $PASSWORD | sudo -S "equo install gcc --ask"
+echo $PASSWORD | sudo -S equo install gcc --ask
+SS=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "For what kernel version do you want to install the sabayon-sources?" --hide-header --column "$NAME" --column "Item" FALSE "4.4.167" FALSE "4.14.132" FALSE "5.0.21" FALSE "5.1.21" FALSE "5.28")
+echo $PASSWORD | sudo -S equo i sabayon-sources-$SS
 fi
 
 if [[ $Distro == *"OpenSUSE"* ]]; then
-echo $PASSWORD | sudo -S "zypper install make kernel-source"
+echo $PASSWORD | sudo -S zypper install make kernel-source
 fi
 fi
 
@@ -54,14 +56,37 @@ cho -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 echo $PASSWORD | sudo -S "make install"
 echo $PASSWORD | sudo -S "modprobe 8812au"
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
+cd /home/$USER/Tomomi
+rm -d -r rtl8812au
 fi
 
 if [[ $DRV == *"RTL8188/eu/s/etv"* ]]; then
-echo WIP
+GB=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "v3.5.9" FALSE "v5.2.2.4" FALSE "v5.3.9")
+git clone --single-branch --branch $GB https://github.com/quickreflex/rtl8188eus.git
+cd rtl8188eus
+echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
+make all
+echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
+echo $PASSWORD | sudo -S make install
+echo $PASSWORD | sudo -S modprobe 8188eu
+echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
+cd /home/$USER/Tomomi
+rm -d -r rtl8723de
 fi
 
 if [[ $DRV == *"RTL8821ce"* ]]; then
-echo WIP
+GB=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "fix-compilation-5.1" FALSE "integrate-v5.2.5_1" FALSE "v5.5.2" FALSE "master")
+echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
+git clone --single-branch --branch $GB https://github.com/tomaspinho/rtl8821ce.git
+cd rtl8821ce
+echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
+make
+echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
+echo $PASSWORD | sudo -S make install
+echo $PASSWORD | sudo -S modprobe 8821ce
+echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
+cd /home/$USER/Tomomi
+rm -d -r rtl8821ce
 fi
 
 if [[ $DRV == *"RTL8723de"* ]]; then
@@ -72,15 +97,25 @@ cd rtl8723de
 echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
 make
 echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-echo $PASSWORD | sudo -S "make install"
-echo $PASSWORD | sudo -S "modprobe 8723de"
+echo $PASSWORD | sudo -S make install
+echo $PASSWORD | sudo -S modprobe 8723de
 echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
 cd /home/$USER/Tomomi
-rm -d- -r rtl8723de
+rm -d -r rtl8723de
 fi
 
 if [[ $DRV == *"RTL8188fu"* ]]; then
-echo WIP
+echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
+git clone https://github.com/kelebek333/rtl8188fu
+cd rtl8188fu
+echo -e "\e[40;38;5;82mBuilding driver\e[30;48;5;82m\e[0m"
+make
+echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
+echo $PASSWORD | sudo -S make install
+echo $PASSWORD | sudo -S modprobe rtl8188fu
+echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
+cd /home/$USER/Tomomi
+rm -d -r rtl8188fu
 fi
 fi
 cd $SD
