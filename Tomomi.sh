@@ -14,33 +14,28 @@ Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER"
 PASSWORD=$(zenity --password --title "The Script will now install the requiered dependencies.Enter your password to proceed")
 
 if [[ $Distro == *"Arch"* ]]; then
-echo VIP
+echo $PASSWORD | sudo -S "pacman -S bc dkms git"
+AKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-headers" FALSE "linux-lts-headers" FALSE "linux-zen-headers")
+echo $PASSWORD | sudo -S "pacman -S $AKH"
 fi
 
 
 if [[ $Distro == *"Solus"* ]]; then
 echo $PASSWORD | sudo -S "eopkg it gcc binutils git make"
-SKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "Current" FALSE "LTS")
-
-if [[ $SKH == *"Current"* ]]; then
-echo $PASSWORD | sudo -S "eopkg it linux-current-headers"
-fi
-
-if [[ $SKH == *"LTS"* ]]; then
-echo $PASSWORD | sudo -S "eopkg it linux-lts-headers"
-fi
+SKH=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-current-headers" FALSE "linux-lts-headers")
+echo $PASSWORD | sudo -S "eopkg it $SKH"
 fi
 
 if [[ $Distro == *"Ubuntu"* ]]; then
-echo $PASSWORD | sudo -S "command"
+echo $PASSWORD | sudo -S "apt install -y git build-essential make autoconf libtool gcc gettext"
 fi
 
 if [[ $Distro == *"Sabayon"* ]]; then
-echo $PASSWORD | sudo -S "command"
+echo $PASSWORD | sudo -S "equo install gcc --ask"
 fi
 
 if [[ $Distro == *"OpenSUSE"* ]]; then
-echo $PASSWORD | sudo -S "command"
+echo $PASSWORD | sudo -S "zypper install make kernel-source"
 fi
 fi
 
@@ -51,7 +46,14 @@ cd /home/$USER/$NAME
 DRV=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "What driver?" --hide-header --column "$NAME" --column "Item" FALSE "RTL8812au" FALSE "RTL8188/eu/s/etv" FALSE "RTL8821ce" FALSE "RTL8723de" FALSE "RTL8188fu")
 
 if [[ $DRV == *"RTL8812au"* ]]; then
-echo WIP
+git clone https://github.com/gordboy/rtl8812au.git
+cd rtl8812au
+echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
+make
+cho -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
+echo $PASSWORD | sudo -S "make install"
+echo $PASSWORD | sudo -S "modprobe 8812au"
+echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
 fi
 
 if [[ $DRV == *"RTL8188/eu/s/etv"* ]]; then
@@ -70,8 +72,8 @@ cd rtl8723de
 echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
 make
 echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
-sudo make install
-sudo modprobe 8723de
+echo $PASSWORD | sudo -S "make install"
+echo $PASSWORD | sudo -S "modprobe 8723de"
 echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
 cd /home/$USER/Tomomi
 rm -d- -r rtl8723de
