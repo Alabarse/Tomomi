@@ -5,11 +5,11 @@ SD=$(pwd)
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 
-Selection=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Welome to Tomomi $VER" --hide-header --column "$NAME" --column "Item" FALSE "Install dependencies" FALSE "Install driver")
+Selection=$(zenity --list --radiolist --height=100 --width 300 --title="$NAME $VER" --text "Welome to Tomomi $VER" --hide-header --column "$NAME" --column "Item" FALSE "Install dependencies" FALSE "Install driver")
 
 if [[ $Selection == *"Install dependencies"* ]]; then
 
-Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE")
+Distro=$(zenity --list --radiolist --height=100 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE")
 
 PASSWORD=$(zenity --password --title "The Script will now install the driver $DRV, enter your password to proceed")
 
