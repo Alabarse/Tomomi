@@ -11,7 +11,7 @@ Should you have a problem during installation or general with the driver then le
 
 # Dependencies :syringe:
 
-- dialog
+- zenity
 
 # Supported distributions :computer:
 
