@@ -44,8 +44,6 @@ To start this installer use the follwing command in the folder:
 bash Tomomi.sh
 ```
 
-To uninstall this driver select "uninstall"
-
 ## See how this works! :eyes:
 
 <a href="https://www.youtube.com/watch?v=hGLh3bI8WLg"><img src="https://www.bilder-upload.eu/upload/7f26bd-1557222110.jpg" style="width:82px; height:86px" title="White flower" alt="Flower"></a>
