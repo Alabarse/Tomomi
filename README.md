@@ -1,4 +1,4 @@
-# Tomomi
+# Tomomi <img src="http://pngimg.com/uploads/wifi/wifi_PNG62297.png" alt="Homura" height="40" width="60"> 
 [![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Tomomi/badge)](https://www.codefactor.io/repository/github/alexander88207/Tomomi) <img alt="GitHub release" src="https://img.shields.io/github/release/Alexander88207/Tomomi.svg"> [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/Mm3aNuQ) <img src="https://img.shields.io/discord/618845118060953600">
 
 
