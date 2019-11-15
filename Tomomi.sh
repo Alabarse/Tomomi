@@ -32,7 +32,7 @@ fi
 
 if [[ $Distro == *"Sabayon"* ]]; then
 echo $PASSWORD | sudo -S equo install gcc --ask
-SS=$(zenity --list --radiolist --height=300 --width 200 --title="$NAME $VER" --text "For what kernel version do you want to install the sabayon-sources?" --hide-header --column "$NAME" --column "Item" FALSE "4.4.197" FALSE "4.14.150" FALSE "5.0.21" FALSE "5.2.21" FALSE "5.3.7")
+SS=$(zenity --list --radiolist --height=300 --width 200 --title="$NAME $VER" --text "For what kernel version do you want to install the sabayon-sources?" --hide-header --column "$NAME" --column "Item" FALSE "4.4.197" FALSE "4.14.150" FALSE "5.2.21" FALSE "5.3.7")
 echo $PASSWORD | sudo -S equo i sabayon-sources-$SS
 fi
 
