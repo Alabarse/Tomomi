@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME=Tomomi
-VER=1.6
+VER=Live
 SD=$(pwd)
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
