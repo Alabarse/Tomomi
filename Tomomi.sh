@@ -1,7 +1,7 @@
 #!/bin/bash
 NAME=Tomomi
 VER=Live
-SD=$(pwd)
+
 echo -e "\e[32mCopyright (c) 2019, Alexander Vereeken All rights reserved."
 echo -e "\e[93mWelcome to $NAME $VER have fun!"
 
@@ -138,5 +138,4 @@ if [[ $? == *"0"* ]]; then
 notify-send "Thanks for using $NAME and have a great day!"
 exit
 fi
-cd $SD
 bash Tomomi.sh
