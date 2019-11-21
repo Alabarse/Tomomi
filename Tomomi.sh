@@ -11,14 +11,13 @@ if [[ $Selection == *"Install dependencies"* ]]; then
 
 Distro=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "Now select a distro" --hide-header --column "$NAME" --column "Item" FALSE "Arch/Manjaro/Antergos" FALSE "Solus" FALSE "Ubuntu" FALSE "Sabayon" FALSE "OpenSUSE")
 
-PASSWORD=$(zenity --password --title "The Script will now install the driver $DRV, enter your password to proceed")
+PASSWORD=$(zenity --password --title "The Script will now install the requiered dependencies, enter your password to proceed")
 
 if [[ $Distro == *"Arch"* ]]; then
 echo $PASSWORD | sudo -S pacman -S bc dkms git
 AKH=$(zenity --list --radiolist --height=300 --width 200 --title="$NAME $VER" --text "What kernel headers do you want to install?" --hide-header --column "$NAME" --column "Item" FALSE "linux-headers" FALSE "linux-lts-headers" FALSE "linux-zen-headers")
 echo $PASSWORD | sudo -S pacman -S $AKH
 fi
-
 
 if [[ $Distro == *"Solus"* ]]; then
 echo $PASSWORD | sudo -S eopkg it gcc binutils git make
