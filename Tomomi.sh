@@ -53,7 +53,7 @@ git clone https://github.com/gordboy/rtl8812au.git
 cd rtl8812au
 echo -e "\e[40;38;5;82m Building driver \e[30;48;5;82m\e[0m"
 make
-cho -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
+echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
 echo $PASSWORD | sudo -S "make install"
 echo $PASSWORD | sudo -S "modprobe 8812au"
 echo -e "\e[40;38;5;82m Done :) \e[30;48;5;82m You can now use your wifi adapter! \e[0m"
