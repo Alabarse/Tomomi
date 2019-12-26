@@ -1,5 +1,5 @@
 # Tomomi <img src="http://pngimg.com/uploads/wifi/wifi_PNG62297.png" alt="Homura" height="40" width="60"> 
-[![CodeFactor](https://www.codefactor.io/repository/github/alexander88207/Tomomi/badge)](https://www.codefactor.io/repository/github/alexander88207/Tomomi) [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/JBKcdNt) <img src="https://img.shields.io/discord/618845118060953600">
+[![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg?logo=discord)](https://discord.gg/JBKcdNt) <img src="https://img.shields.io/discord/618845118060953600">
 
 
 Should you have a problem during installation or general with the driver then let me know :)
