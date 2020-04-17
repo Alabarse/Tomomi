@@ -4,7 +4,7 @@
 
 Should you have a problem during installation or general with the driver then let me know :)
 
-Pleas know that this will be not 100% maintained, if you have suggestions for improvement please send a pull request.
+Please know that this will be not 100% maintained, if you have suggestions for improvement please send a pull request.
 
 # Features &#x1F4D8;
 
