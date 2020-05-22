@@ -120,8 +120,8 @@ rm -d -r rtl8188fu
 fi
 if [[ $DRV == *"RTL88x2bu"* ]]; then
 echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
-git clone https://github.com/cilynx/rtl88x2BU_WiFi_linux_v5.3.1_27678.20180430_COEX20180427-5959
-cd rtl88x2BU_WiFi_linux_v5.3.1_27678.20180430_COEX20180427-5959
+git clone https://github.com/cilynx/rtl88x2bu.git
+cd rtl88x2bu
 echo -e "\e[40;38;5;82mBuilding driver\e[30;48;5;82m\e[0m"
 make
 echo -e "\e[40;38;5;82m Installing driver \e[30;48;5;82m\e[0m"
@@ -129,7 +129,7 @@ echo $PASSWORD | sudo -S make install
 echo $PASSWORD | sudo -S modprobe 88x2bu
 echo -e "\e[40;38;5;82mDone :) \e[30;48;5;82mYou can now use your wifi adapter!\e[0m"
 cd /home/$USER/Tomomi
-rm -d -r rtl88x2BU_WiFi_linux_v5.3.1_27678.20180430_COEX20180427-5959
+rm -d -r rtl88x2bu
 fi
 fi
 
