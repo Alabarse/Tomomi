@@ -91,7 +91,7 @@ rm -d -r rtl8821ce
 fi
 
 if [[ $DRV == *"RTL8723de"* ]]; then
-GB=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "4.10-down" FALSE "4.11-up" FALSE "4.15-up" FALSE "5.0-up")
+GB=$(zenity --list --radiolist --height=300 --width 300 --title="$NAME $VER" --text "The driver $DRV has several branches which do you want to use?" --hide-header --column "$NAME" --column "Item" FALSE "4.10-down" FALSE "4.11-up" FALSE "4.15-up" FALSE "5.0-up" FALSE "current")
 echo -e "\e[40;38;5;82mDownloading driver\e[30;48;5;82m\e[0m"
 git clone --single-branch --branch $GB https://github.com/smlinux/rtl8723de.git
 cd rtl8723de
